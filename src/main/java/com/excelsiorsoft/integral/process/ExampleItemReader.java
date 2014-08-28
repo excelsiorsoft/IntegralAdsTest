@@ -1,10 +1,8 @@
 package com.excelsiorsoft.integral.process;
 
 import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 /**
  * {@link ItemReader} with hard-coded input data.
@@ -12,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 //@Component("cvsFileItemReader")
 @Scope("step")
+@Deprecated
 public class ExampleItemReader implements ItemReader<String> {
 	
 	private String[] input = {"Hello world!", "Good bye, world!"};
