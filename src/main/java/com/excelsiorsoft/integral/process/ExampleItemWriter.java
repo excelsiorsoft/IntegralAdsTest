@@ -19,6 +19,8 @@ import akka.actor.Props;
 import com.excelsiorsoft.integral.domain.Dto;
 import com.excelsiorsoft.integral.process.akka.Master;
 
+import static com.excelsiorsoft.integral.process.ExampleConfiguration.*;
+
 
 /**
  *  Workhorse {@link ItemWriter} which does the final calculation.
@@ -47,7 +49,7 @@ public class ExampleItemWriter implements ItemWriter<Dto> {
 	private Accumulator accumulator;
 	
 	@Autowired
-    @Qualifier(ExampleConfiguration.MASTER_ACTOR)
+    @Qualifier(/*ExampleConfiguration.*/MASTER_ACTOR)
     private ActorRef master;
 	
 	
