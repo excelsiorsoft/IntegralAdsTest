@@ -1,1 +1,12 @@
-/target/
+target
+logs
+log
+.metadata
+*.log
+.setting
+.settings
+.settings/org.eclipse.jdt.core.prefs
+.springBean
+*.jar
+target/classes
+target/test-classes
