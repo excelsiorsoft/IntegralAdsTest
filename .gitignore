@@ -1,4 +1,4 @@
-target
+target/
 logs
 log
 .metadata
@@ -10,3 +10,4 @@ log
 *.jar
 target/classes
 target/test-classes
+
