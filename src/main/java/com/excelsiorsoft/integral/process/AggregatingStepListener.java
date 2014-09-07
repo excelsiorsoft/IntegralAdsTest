@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 
-public class AggregatingStepListener implements StepExecutionListener {
+public class AggregatingStepListener implements StepExecutionListener  {
 	
 	private static final Log log = LogFactory.getLog(AggregatingStepListener.class); 
 	
