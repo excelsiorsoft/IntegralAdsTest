@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -31,7 +32,7 @@ public class ExampleItemWriter implements ItemWriter<Dto> {
 	/*
 	 * Akka initialization
 	 */
-	private ActorSystem _system;
+	/*private ActorSystem _system;
 	private ActorRef master; 
 	
 	@PostConstruct
@@ -40,12 +41,14 @@ public class ExampleItemWriter implements ItemWriter<Dto> {
 		
 		master = _system.actorOf(new Props(Master.class),"master");
 		log.info("Obtained master: "+master);
-	}
+	}*/
 	
 	@Autowired()
 	private Accumulator accumulator;
 	
-	
+	@Autowired
+    @Qualifier(ExampleConfiguration.MASTER_ACTOR)
+    private ActorRef master;
 	
 	
 	/**

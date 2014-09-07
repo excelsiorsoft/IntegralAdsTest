@@ -11,6 +11,7 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.JobParametersBuilder;
 import org.springframework.batch.core.launch.JobLauncher;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,6 +19,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
 
+import com.excelsiorsoft.integral.process.ExampleConfiguration;
 import com.excelsiorsoft.integral.process.akka.Master;
 import com.excelsiorsoft.integral.process.akka.Result;
 
@@ -29,16 +31,20 @@ public class ExampleJobConfigurationTests {
 	/*
 	 * Akka initialization
 	 */
-	private static ActorSystem _system;
-	private static ActorRef master; 
+	/*private static ActorSystem _system;
+	private static ActorRef master; */
 	
-	@BeforeClass
+	/*@BeforeClass
 	public static void init(){
 		_system = ActorSystem.create("Aggregator");
 		
 		master = _system.actorOf(new Props(Master.class),"master");
 		log.info("Obtained master: "+master);
-	}
+	}*/
+	
+	@Autowired
+    @Qualifier(ExampleConfiguration.MASTER_ACTOR)
+    private ActorRef master;
 	
 	@Autowired
 	private JobLauncher jobLauncher;
@@ -62,7 +68,7 @@ public class ExampleJobConfigurationTests {
 		
 		Thread.sleep(500);
 		
-		_system.shutdown();
+		//_system.shutdown();
 	}
 	
 }

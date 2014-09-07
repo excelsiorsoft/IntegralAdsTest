@@ -118,7 +118,12 @@
 			<groupId>com.typesafe.akka</groupId>
 			<artifactId>akka-actor</artifactId>
 			<version>2.0.2</version>
-		</dependency>		
+		</dependency>	
+		<dependency>
+            <groupId>org.easytesting</groupId>
+            <artifactId>fest-reflect</artifactId>
+            <version>1.4</version>
+        </dependency>	
 	</dependencies>
 	
 	<repositories>
