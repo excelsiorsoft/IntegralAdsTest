@@ -1,7 +1,7 @@
 IntegralAdsTest
 ===============
 
-Interview Test
+Problem Definition
 ===============
 
 Consider the following task as the building block for an expanding project that could grow over the next few months.  You will own this project as a developer and it may grow to the point that other developers will be involved in its production.
