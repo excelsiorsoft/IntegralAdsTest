@@ -1,4 +1,4 @@
-IntegralAdsTest
+
 ===============
 
 Problem Definition
